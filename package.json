@@ -1,0 +1,25 @@
+{
+  "name": "my-contribute",
+  "version": "0.1.0",
+  "description": "Turn git history into a per-contributor contribution report you can show in a portfolio or CV",
+  "bin": {
+    "my-contribute": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "skills",
+    "README.md"
+  ],
+  "keywords": [
+    "git",
+    "contributions",
+    "portfolio",
+    "cv",
+    "report",
+    "cli"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
