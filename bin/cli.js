@@ -7,11 +7,11 @@ const path = require('node:path');
 
 const VERSION = '0.1.0';
 
-const HELP = `my-contribute v${VERSION}
+const HELP = `my-contribution v${VERSION}
 Turn git history into a per-contributor contribution report.
 
 Usage:
-  my-contribute [options]
+  my-contribution [options]
 
 Options:
   --repo <path>      Repository path (default: current directory)
@@ -28,9 +28,9 @@ Options:
   -h, --help         Show this help
 
 Examples:
-  my-contribute
-  my-contribute --since 2026-01-01 --out CONTRIBUTIONS.md
-  my-contribute --merge "Budi,budi@mail.com,budi.s" --json
+  my-contribution
+  my-contribution --since 2026-01-01 --out CONTRIBUTIONS.md
+  my-contribution --merge "Budi,budi@mail.com,budi.s" --json
 `;
 
 // Files that say little about a person's real work.
@@ -112,7 +112,7 @@ function parseArgs(argv) {
 }
 
 function die(msg) {
-  process.stderr.write(`my-contribute: ${msg}\n`);
+  process.stderr.write(`my-contribution: ${msg}\n`);
   process.exit(1);
 }
 

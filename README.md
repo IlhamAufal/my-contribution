@@ -1,73 +1,78 @@
-# my-contribute
+# my-contribution
 
-Turn your git history into a per-contributor contribution report you can drop into a portfolio or CV.
+Ubah riwayat git Anda menjadi laporan kontribusi per kontributor yang siap dimasukkan ke portofolio atau CV.
 
-No install, no dependencies. Just Node.js 18+ and git.
+Tanpa instalasi, tanpa dependensi. Cukup Node.js 18+ dan git.
 
-## Quick start
+## Mulai cepat
 
-Run it inside any git repository:
-
-```bash
-npx my-contribute
-```
-
-Save it as a file:
+Jalankan di dalam repositori git mana pun:
 
 ```bash
-npx my-contribute --out CONTRIBUTIONS.md
+npx my-contribution
 ```
 
-## What you get
-
-- A summary table: commits, share, lines added/deleted, and files touched per contributor
-- For each person: active period, main areas of the codebase, languages, work mix (feat/fix/refactor...), and highlights
-- Lock files, build output, and binary assets are ignored so the numbers reflect real work
-
-## Common options
-
-Only a time window:
+Simpan ke dalam file:
 
 ```bash
-npx my-contribute --since 2026-01-01 --until 2026-06-30
+npx my-contribution --out CONTRIBUTIONS.md
 ```
 
-Only one person:
+## Apa yang Anda dapatkan
+
+- Tabel ringkasan: commit, persentase kontribusi, baris ditambah/dihapus, dan file yang diubah per kontributor
+- Untuk setiap orang: periode aktif, area utama codebase, bahasa pemrograman, komposisi pekerjaan (feat/fix/refactor...), dan sorotan utama (highlights)
+- File lock, output build, dan aset biner diabaikan agar angka mencerminkan pekerjaan nyata
+
+## Opsi umum
+
+Hanya rentang waktu tertentu:
 
 ```bash
-npx my-contribute --author budi
+npx my-contribution --since 2026-01-01 --until 2026-06-30
 ```
 
-Merge several names or emails that belong to the same person (first entry is the display name):
+Hanya satu orang:
 
 ```bash
-npx my-contribute --merge "Budi,budi@mail.com,budi.s"
+npx my-contribution --author budi
 ```
 
-Machine-readable output:
+Gabungkan beberapa nama atau email milik orang yang sama (entri pertama sebagai nama tampilan):
 
 ```bash
-npx my-contribute --json
+npx my-contribution --merge "Budi,budi@mail.com,budi.s"
 ```
 
-Run `npx my-contribute --help` for every option.
-
-## Use it as an agent skill
-
-This repo also ships a skill that runs the CLI and turns the result into contribution summaries and CV bullets. Install it from GitHub (replace `username` with your GitHub name):
+Output yang dapat dibaca mesin:
 
 ```bash
-npx skills add username/my-contribute
+npx my-contribution --json
 ```
 
-Then ask your agent something like "summarize my contributions in this repo for my CV".
+Jalankan `npx my-contribution --help` untuk melihat semua opsi.
 
-## Tips for better reports
+## Pakai sebagai skill agent
 
-- Use [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `refactor:`) so the work mix is accurate.
-- Commit counts and line counts are weak signals on their own. Pair the report with links to your pull requests.
-- Tell your teammates before you analyze their work.
+Repo ini juga berisi skill yang menjalankan CLI lalu mengubah hasilnya menjadi ringkasan kontribusi dan bullet CV.
 
-## License
+```bash
+npx skills add IlhamAufal/my-contribution
+```
+
+Lalu minta ke agent, misalnya: "Rangkum kontribusi saya di repo ini untuk CV."
+
+Skill mendeteksi mode sendiri:
+- Commit dari banyak orang: laporan per kontributor.
+- Commit dari satu orang: kontribusi `git-verified`.
+- Tidak ada history git: semua fitur diasumsikan dikerjakan sendiri (`self-declared`).
+
+Cek skill terbaca dengan:
+
+```bash
+npx skills add IlhamAufal/my-contribution --list
+```
+
+## Lisensi
 
 MIT
